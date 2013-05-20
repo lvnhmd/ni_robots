@@ -22,5 +22,5 @@ Expected Output:
 
 
 --------------------------------------------------------------------------------------------------------------------
-For design coinsiderations and assuptions please refer to DesignConsiderations.pdf
+For design considerations and assumptions please refer to DesignConsiderations.pdf
 
