@@ -14,9 +14,16 @@ import com.newsint.eaexercise.state.DirectionSouthTest;
 import com.newsint.eaexercise.state.DirectionWestTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({ PlateauTest.class, PositionTest.class, RobotTest.class, DirectionEastTest.class,
-		DirectionNorthTest.class, DirectionSouthTest.class,
-		DirectionWestTest.class, CommandTest.class  })
+
+@SuiteClasses({ PlateauTest.class, 
+				PositionTest.class, 
+				RobotTest.class, 
+				DirectionEastTest.class,
+				DirectionNorthTest.class, 	
+				DirectionSouthTest.class,
+				DirectionWestTest.class, 
+				CommandTest.class  })
+
 public class AllTests {
 
 }
