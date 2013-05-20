@@ -33,4 +33,4 @@ Assumptions:
 The calculations are based on the First quadrant of the Cartesian coordinate system. 
 The lower-left coordinates of plateau are (0,0).
 A square directly North from (x, y) is (x, y+1).
-Only one robot is deployed at any give time ( when a Robot moves )
+Only one robot is deployed at any give time ( a possible collision is not handled )
