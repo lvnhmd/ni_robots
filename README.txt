@@ -22,5 +22,15 @@ Expected Output:
 
 
 --------------------------------------------------------------------------------------------------------------------
-For design considerations and assumptions please refer to DesignConsiderations.pdf
+Design considerations and assumptions :
 
+A solution to this problem can be designed using State and Command patterns.
+The position of a Robot will change depnding oon it's Direction(which is the State in this case).
+Each command (turn right,turn left,move) is treated as member of the same Command family.
+A Plateau is designed to be a Singleton as each robot will be deployed on the same Plateau.
+
+Assumptions:
+The calculations are based on the First quadrant of the Cartesian coordinate system. 
+The lower-left coordinates of plateau are (0,0).
+A square directly North from (x, y) is (x, y+1).
+Only one robot is deployed at any give time ( when a Robot moves )
