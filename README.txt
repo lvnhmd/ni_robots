@@ -25,7 +25,7 @@ Expected Output:
 Design considerations and assumptions :
 
 A solution to this problem can be designed using State and Command patterns.
-The position of a Robot will change depnding oon it's Direction(which is the State in this case).
+The position of a Robot will change depnding on it's Direction(which is the State in this case).
 Each command (turn right,turn left,move) is treated as member of the same Command family.
 A Plateau is designed to be a Singleton as each robot will be deployed on the same Plateau.
 
