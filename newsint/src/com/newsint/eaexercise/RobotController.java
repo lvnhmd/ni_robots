@@ -23,17 +23,14 @@ import com.newsint.eaexercise.state.Direction;
  */
 
 public class RobotController {
-	
 	private static Scanner in;
 	private static String plateauCoordsStr;
 	private static String robotPositionStr;
 	private static String commandSeqStr;
-	
 	/**
 	 * Reads and validates console input 
 	 *
 	 */
-	
 	private static void readUserInput() {
 		
 		in = new Scanner(System.in);
@@ -42,32 +39,24 @@ public class RobotController {
         
         plateauCoordsStr =in.nextLine().trim();      
         
-        while (!plateauCoordsStr.matches("\\d+ \\d+"))
-        {
+        while (!plateauCoordsStr.matches("\\d+ \\d+"))	{
         	System.out.println("Invalid coordinates. Please enter upper-right coordinates of the plateau: eg 5 5");
         	plateauCoordsStr =in.nextLine().trim();
         }
         
         System.out.println("Please enter robot's position:");
-		
         robotPositionStr =in.nextLine().toUpperCase().trim();
-        
-        while (!robotPositionStr.matches("\\d+ \\d+ [NEWS]"))
-        {
+        while (!robotPositionStr.matches("\\d+ \\d+ [NEWS]"))	{
         	System.out.println("Invalid robot position. Please enter robot's position: eg 1 2 N" );
         	robotPositionStr =in.nextLine().toUpperCase().trim();
         }
 		
         System.out.println("Please enter series of instructions:");
-        
         commandSeqStr = in.nextLine().toUpperCase().trim();
         
-        while( !commandSeqStr.matches("[LMR]+") ) 
-        {
-        	
+        while( !commandSeqStr.matches("[LMR]+") ) {
         	System.out.println("Invalid instruction series. Please enter series of instructions: eg LMLMLMLMM" );
         	commandSeqStr =in.nextLine().toUpperCase().trim();
-        	
         }
 	}
 	
@@ -100,28 +89,20 @@ public class RobotController {
 		splits = commandSeqStr.split("");
 		List<Command> commands = new ArrayList<Command>();
 		for (int i = 0; i < splits.length; i++) {
-			
 			for (Command c : Command.values()) {
 			     if(c.toString().equals(splits[i])){
 			    	 	 commands.add(c); 
 			    		 break;
 			     }	 
 			 }
-			
-			
 		}
 		
 		try {
-			
 			robot.executeCommands(commands);
 			System.out.println(robot.getPosition().toString() + " " + robot.getDirection().toString());
-			
 		} catch (OutOfBoundsException e) {
-			
 			System.out.println(e.getMessage());
-		
 		} catch (InstanceNotInitializedException e) {
-			
 			System.out.println(e.getMessage());
 		}
 		
